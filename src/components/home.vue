@@ -57,6 +57,11 @@
 
         .text{
             margin: 0;
+            margin-bottom: 20px;
+        }
+
+        .text h3{
+            text-align: center;
         }
     }
 </style>

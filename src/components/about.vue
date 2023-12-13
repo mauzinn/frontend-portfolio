@@ -49,8 +49,7 @@
 
     .perfil-about{
         margin-right: 30px;
-        height: 300px;
-        width: 250px;
+        width: 200px;
     }
 
     #Sobre{
@@ -73,6 +72,11 @@
         }
         .perfil-about{
             margin: 0;
+            margin-bottom: 20px;
+        }
+
+        .text{
+            text-align: center;
         }
     }
 </style>

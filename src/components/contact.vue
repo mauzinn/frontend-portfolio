@@ -131,6 +131,7 @@
         .form-background{
             width: 100%;
             border-radius: 0;
+            padding: 20px 0px;
         }
     }
 

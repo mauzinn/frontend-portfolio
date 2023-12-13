@@ -1,20 +1,23 @@
 <template>
     <header class="header">
+        <menuVue v-show="MENU_OPENED" />
         <section class="navbar fixed-top">
+            <button @click="MENU" class="menu-button" :id="button">Menu</button>
+
             <nav>
                 <ul class="nav">
                     <li v-for="link in navLinks" :key="link"><a class="link" :href="'#' + link">{{link}}</a></li>
                 </ul>
             </nav>
 
-            <section>
-                <a href="https://github.com/mauzinn"><img class="icon" src="/assets/github.png"></a>
-            </section>
+            <a href="https://github.com/mauzinn"><img class="icon" src="/assets/github.png"></a>
         </section>
     </header>
 </template>
 
 <script>
+    import menuVue from './menu.vue'
+
     export default {
         name: 'navbar',
         data() {
@@ -25,7 +28,16 @@
                     'Habilidades',
                     'Projetos',
                     'Contate-me'
-                ]
+                ],
+                MENU_OPENED: false
+            }
+        },
+        components: {
+            menuVue
+        },
+        methods: {
+            MENU() {
+                this.MENU_OPENED = !this.MENU_OPENED
             }
         }
     }
@@ -37,6 +49,16 @@
         top: 0;
         width: 100%;
     }
+
+    @media (max-width: 624px) {
+        nav {
+            display: none;
+        }
+
+        .menu-button{
+            display: block;
+        }
+    }
 </style>
 
 <style>
@@ -44,9 +66,24 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        padding: 20px;
+        padding: 20px 0px;
         backdrop-filter: blur(3px);
         z-index: 3;
+    }
+
+    .menu-button{
+        color: var(--colorVue);
+        padding: 20px 14px;
+        border-radius: 50%;
+        background: none;
+        border: 1px solid currentColor;
+        display: none;
+    }
+
+    .menu-button:hover{
+        transform: scale(105%);
+
+        transition: 0.3s;
     }
 
     .nav{
@@ -81,11 +118,5 @@
 
     .header{
         height: 90px;
-    }
-
-    @media (max-width: 624px) {
-        nav {
-            display: none;
-        }
     }
 </style>
