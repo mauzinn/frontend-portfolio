@@ -1,26 +1,42 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <body>
+    <navbarVue />
+    <homeVue />
+    <aboutVue />
+    <skillsVue />
+    <projectsVue />
+    <footerVue class="footerVue" />
+  </body>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import aboutVue from './components/about.vue'
+import footerVue from './components/footer.vue'
+import homeVue from './components/home.vue'
+import navbarVue from './components/navbar.vue'
+import projectsVue from './components/projects.vue'
+import skillsVue from './components/skills.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    navbarVue,
+    homeVue,
+    aboutVue,
+    skillsVue,
+    projectsVue,
+    footerVue
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  *{
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  body{
+    background-color: #30303C;
+  }
 </style>
